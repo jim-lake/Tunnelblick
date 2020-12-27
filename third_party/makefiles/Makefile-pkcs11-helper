@@ -28,7 +28,6 @@ built-pkcs11-helper: built-allssl
 		$(MAKE) clean; \
 		echo "Configure PKCS11-Helper for $$a" ; \
 		CC=$(CC) \
-		CFLAGS="$(CFLAGS) -arch $$a" \
 		OPENSSL_CFLAGS="-I$(OPENSSL_1_1_STAGING_DIR)/$$a/include" \
 		OPENSSL_LIBS="-L$(OPENSSL_1_1_STAGING_DIR)/lib \
 		              -lssl \

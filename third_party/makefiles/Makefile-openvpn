@@ -122,7 +122,6 @@ built-openvpn: built-openvpn-prepare built-lzo built-lz4 built-pkcs11-helper bui
                         mwd="$$(pwd)" ; \
                         CC="$(CC)" \
                             CFLAGS="$(CFLAGS) \
-                                    -arch $$a \
                                     $(OPENVPN_DEPRECATED_LLVN_OPTION) \
                                     -D __APPLE_USE_RFC_3542" \
                             LZO_CFLAGS="-I$(LZO_STAGING_DIR)/include" \
@@ -146,7 +145,6 @@ built-openvpn: built-openvpn-prepare built-lzo built-lz4 built-pkcs11-helper bui
                         mwd="$$(pwd)" ; \
                         CC="$(CC)" \
                             CFLAGS="$(CFLAGS) \
-                                    -arch $$a \
                                     $(OPENVPN_DEPRECATED_LLVN_OPTION) \
                                     -D __APPLE_USE_RFC_3542" \
                             LZO_CFLAGS="-I$(LZO_STAGING_DIR)/include" \

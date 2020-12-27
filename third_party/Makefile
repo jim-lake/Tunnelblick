@@ -25,23 +25,23 @@
 #
 # IMPORTANT: Only Intel works currently; Apple Silicon does not yet work!!!
 #
-LZ4_TARGET_ARCHS         = x86_64
-LZO_TARGET_ARCHS         = x86_64
-PKCS11_TARGET_ARCHS      = x86_64
-SPARKLE_TARGET_ARCHS     = x86_64
-TUNTAP_TARGET_ARCHS      = x86_64
+LZ4_TARGET_ARCHS         = arm
+LZO_TARGET_ARCHS         = arm
+PKCS11_TARGET_ARCHS      = arm
+SPARKLE_TARGET_ARCHS     = arm
+TUNTAP_TARGET_ARCHS      = arm
 
 # Used to build OpenSSL and LibreSSL:
 # Only OpenSSL 1.1 can be built for Apple Silicon
-LIBRESSL_TARGET_ARCHS     = x86_64
-OPENSSL_1_0_TARGET_ARCHS = darwin64-x86_64-cc
-OPENSSL_1_1_TARGET_ARCHS = darwin64-x86_64-cc
+LIBRESSL_TARGET_ARCHS    = arm
+OPENSSL_1_0_TARGET_ARCHS = darwin64-arm64-cc
+OPENSSL_1_1_TARGET_ARCHS = darwin64-arm64-cc
 
 # Used to build OpenVPN
 # Only versions of OpenVPN that are built with OpenSSL 1.1 can be built for Apple Silicon
-OPENVPN_LIBRESSL_TARGET_ARCHS    = x86_64
-OPENVPN_OPENSSL_1_0_TARGET_ARCHS = x86_64
-OPENVPN_OPENSSL_1_1_TARGET_ARCHS = x86_64
+OPENVPN_LIBRESSL_TARGET_ARCHS    = arm
+OPENVPN_OPENSSL_1_0_TARGET_ARCHS = arm
+OPENVPN_OPENSSL_1_1_TARGET_ARCHS = arm
 
 CC = gcc
 
@@ -117,6 +117,7 @@ OPENSSL_1_0_TARGET_FILES = $(foreach f, libcrypto.a libssl.a, $(OPENSSL_1_0_STAG
 
 OPENSSL_1_1_STAGING_DIR = $(STAGING_DIR)/$(OPENSSL_1_1_NAME)
 OPENSSL_1_1_TARGET_FILES = $(foreach f, libcrypto.a libssl.a, $(OPENSSL_1_1_STAGING_DIR)/lib/$(f))
+OPENSSL_1_1_INCLUDE_DIR = $(OPENSSL_1_1_STAGING_DIR)/include
 
 LIBRESSL_STAGING_DIR = $(STAGING_DIR)/$(LIBRESSL_NAME)
 LIBRESSL_TARGET_FILES = $(foreach f, libcrypto.a libssl.a, $(LIBRESSL_STAGING_DIR)/lib/$(f))
