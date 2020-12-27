@@ -28,8 +28,8 @@
 LZ4_TARGET_ARCHS         = arm
 LZO_TARGET_ARCHS         = arm
 PKCS11_TARGET_ARCHS      = arm
-SPARKLE_TARGET_ARCHS     = arm
-TUNTAP_TARGET_ARCHS      = arm
+SPARKLE_TARGET_ARCHS     = arm64
+TUNTAP_TARGET_ARCHS      = arm64
 
 # Used to build OpenSSL and LibreSSL:
 # Only OpenSSL 1.1 can be built for Apple Silicon
